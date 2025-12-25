@@ -1,0 +1,66 @@
+<!-- Perspective smaller value depth larger value kam
+preserve 3d 
+backface visibility hidden -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .scene{
+            perspective: 500px;
+        }
+        .cardBody{
+            height: 200px;
+            width: 250px;
+            background-color: aquamarine;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: 500ms linear;
+        }
+
+        .cardBody:hover{
+            transform: rotateY(180deg);    
+        }
+        /* .scene:hover .cardBody{
+            transform: rotateY(180deg);    
+        } */
+
+        .front, .back{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+
+        }
+        .back{
+            background-color: brown;
+            /* z-index: -1; */
+            transform: rotateY(180deg);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="scene">
+            <div class="cardBody">
+                <div class="front"><h1>Front</h1></div>
+                <div class="back"><h1>back</h1></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

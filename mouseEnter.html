@@ -48,17 +48,18 @@
         // let h1 = document.getElementsByTagName("h1")[0]
         b.forEach((i)=>{
             i.addEventListener("mouseenter",function(e){
-              console.log(i.childNodes[2])
+            //   console.log(i.childNodes[2])
               i.childNodes[2].style.opacity = 1
             //   h1.style.opacity = 1
             })
             i.addEventListener("mousemove",function(e){
-              console.log("leave")
+            //   console.log("leave")
             //   h1.style.opacity = 0
-            i.childNodes[2].style.transform = `translate(${e.x}px,${e.y}px)`
+            console.log(e)
+            i.childNodes[2].style.transform = `translate(${e.offsetX}px,${e.offsetY}px)`
             })
             i.addEventListener("mouseleave",function(e){
-              console.log("leave")
+            //   console.log("leave")
             //   h1.style.opacity = 0
             i.childNodes[2].style.opacity = 0
             })
